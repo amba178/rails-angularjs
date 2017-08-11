@@ -1,0 +1,2 @@
+
+# rails-angularjs app
