@@ -10,20 +10,17 @@
 %section.search-results 
 	%header 
 		%h1.h3 Results 
-	%table.table.table-striped
-		%thead
-			%tr
-				%th First Name
-				%th Last Name
-				%th Email
-				%th Joined 
-
-		%tbody 
-			-@customers.each do |customer|
-				%tr 
-					%td=customer.first_name
-					%td=customer.last_name 
-					%td=customer.email 
-					%td=l customer.created_at.to_date 
-
-
+	%ol{class: "list-group"}
+		- @customers.each do |customer|
+			%li{class: "list-group-item clearfix"}
+				 
+				%h3{class: 'pull-right'} 
+					%small{class: 'text-uppercase' }
+						Joined
+					#{l customer.created_at.to_date}
+				%h2{class: "h3"}
+					=customer.first_name
+					=customer.last_name
+					%small=customer.username
+				%h4=customer.email 
+				 
