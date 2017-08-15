@@ -1,0 +1,6 @@
+%nav
+	%ul{class: "pager"}
+		%li{class: "Previous #{page == 0 ?  'disable' : ''} pull-left"}
+			=link_to_if page > 0, "&larr; Previous".html_safe, customers_path(keywords: keywords, page: page - 1), class: 'pull-left'
+		%li{class: "next"}
+			=link_to "Next &rarr;".html_safe, customers_path(keywords: keywords, page: page + 1)

@@ -1,5 +1,6 @@
 %header 
 	%h1{class: 'h2'} Customer Search 
+=render partial: "pager", locals: { keywords: @keywords, page: @page }
 %section{class: 'search-form'}
 	=form_for :customers, method: :get do |f| 
 		.input-group.input-group-lg 
@@ -22,4 +23,5 @@
 					=customer.last_name
 					%small=customer.username
 				%h4=customer.email 
+	=render partial: "pager", locals: {keywords: @keywords, page: @page }
 				 
